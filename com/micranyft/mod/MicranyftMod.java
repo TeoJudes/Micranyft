@@ -2,6 +2,7 @@ package com.micranyft.mod;
 
 import com.micranyft.block.BlockBarrel;
 import com.micranyft.block.BlockChair;
+import com.micranyft.block.BlockFenceSide;
 import com.micranyft.block.BlockStool;
 import com.micranyft.block.BlockTable;
 import com.micranyft.block.BlockWardrobe;
@@ -59,6 +60,7 @@ import mod.micranyft.entity.EntityWerewolf;
 import mod.micranyft.handler.GuiHandler;
 import mod.micranyft.tileentity.TileEntityBarrel;
 import mod.micranyft.tileentity.TileEntityChair;
+import mod.micranyft.tileentity.TileEntityFenceSide;
 import mod.micranyft.tileentity.TileEntityWardrobe;
 import mod.micranyft.worldgen.MireWorldGen;
 import mod.micranyft.worldgen.SilverWorldGen;
@@ -163,6 +165,7 @@ public class MicranyftMod {
 	public static Block table;
 	public static Block chair;
 	public static Block stool;
+	public static Block fenceSide;
 	
 	public static Block barrel;
 	public static Block barrelIdle;
@@ -355,6 +358,7 @@ public class MicranyftMod {
 		chair = new BlockChair(Material.wood).setBlockName("BlockChair");
 		barrel = new BlockBarrel(Material.wood, true).setBlockName("BlockBarrel");
 		wardrobe = new BlockWardrobe(Material.wood).setBlockName("BlockWardrobe");
+		fenceSide = new BlockFenceSide(Material.wood).setBlockName("BlockFenceSide");
 				
 		
 		hopPlant = new CropHop().setBlockName("HopPlant");
@@ -499,6 +503,7 @@ public class MicranyftMod {
 		GameRegistry.registerBlock(barrel, "BlockBarrel");
 		GameRegistry.registerBlock(chair, "BlockChair");
 		GameRegistry.registerBlock(wardrobe, "BlockWardrobe");
+		GameRegistry.registerBlock(fenceSide, "BlockFenceSide");
 		
 		
 	}
@@ -521,6 +526,7 @@ public class MicranyftMod {
 		GameRegistry.registerTileEntity(TileEntityBarrel.class, "BlockBarrel");
 		GameRegistry.registerTileEntity(TileEntityChair.class, "BlockChair");
 		GameRegistry.registerTileEntity(TileEntityWardrobe.class, "BlockWardrobe");
+		GameRegistry.registerTileEntity(TileEntityFenceSide.class, "BlockFenceSide");
 		
 		GameRegistry.registerWorldGenerator(new SilverWorldGen(), 0);
 		GameRegistry.registerWorldGenerator(new MireWorldGen(), 0);

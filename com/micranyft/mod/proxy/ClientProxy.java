@@ -5,6 +5,7 @@ import com.micranyft.model.ModelShark;
 import com.micranyft.model.ModelWerewolf;
 import com.micranyft.render.RenderBarrel;
 import com.micranyft.render.RenderChair;
+import com.micranyft.render.RenderFenceSide;
 import com.micranyft.render.RenderShark;
 import com.micranyft.render.RenderStool;
 import com.micranyft.render.RenderTable;
@@ -15,11 +16,13 @@ import mod.micranyft.entity.EntityShark;
 import mod.micranyft.entity.EntityWerewolf;
 import mod.micranyft.itemrender.ItemRenderBarrel;
 import mod.micranyft.itemrender.ItemRenderChair;
+import mod.micranyft.itemrender.ItemRenderFenceSide;
 import mod.micranyft.itemrender.ItemRenderStool;
 import mod.micranyft.itemrender.ItemRenderTable;
 import mod.micranyft.itemrender.ItemRenderWardrobe;
 import mod.micranyft.tileentity.TileEntityBarrel;
 import mod.micranyft.tileentity.TileEntityChair;
+import mod.micranyft.tileentity.TileEntityFenceSide;
 import mod.micranyft.tileentity.TileEntityStool;
 import mod.micranyft.tileentity.TileEntityTable;
 import mod.micranyft.tileentity.TileEntityWardrobe;
@@ -57,6 +60,10 @@ public class ClientProxy extends CommonProxy{
 		TileEntitySpecialRenderer renderchair = new RenderChair();
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChair.class, renderchair);
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(MicranyftMod.chair), new ItemRenderChair(renderchair, new TileEntityChair()));
+		
+		TileEntitySpecialRenderer renderfenceside = new RenderFenceSide();
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFenceSide.class, renderfenceside);
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(MicranyftMod.fenceSide), new ItemRenderFenceSide(renderfenceside, new TileEntityFenceSide()));
 		
 		
 		//entities
